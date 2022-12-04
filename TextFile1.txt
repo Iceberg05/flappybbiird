@@ -1,0 +1,29 @@
+
+using System;
+using System.Collections;
+using System.Collections.Generic; using TMPro;
+using UnityEngine;
+C Unity Script (1 asset reference) | 0 references public class GameManager: MonoBehaviour
+{
+int score = 0;
+int highScore = 0;
+public TextMeshProUGUI scoreText; public TextMesh ProUGUI highScoreText;
+Unity Message | O references private void Start()
+{
+highScore = PlayerPrefs.GetInt("HighScore", 0); highScoreText.text = highScore.ToString();
+O references
+public void Puan()
+{
+score += 1;
+}
+scoreText.text
+=
+score.ToString();
+HighScoreControl();
+1 reference
+private void HighScoreControl()
+{
+if (score > highScore)
+{
+highScore = score;
+highScoreText.text = highScore.ToString(); PlayerPrefs.SetInt("HighScore", highScore);
